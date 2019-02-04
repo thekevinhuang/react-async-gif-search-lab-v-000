@@ -15,15 +15,19 @@ export default class GifSearch extends Component {
   }
 
   handleSubmit = (event) => {
+    event.preventDefault()
     this.props.searchSubmit(this.state.search)
   }
 
   render () {
-    <form onSubmit={this.handleSubmit}>
-      <input type="text" id="search" onChange={this.searchUpdate} value={this.state.search}/>
+    return(
+      <form onSubmit={this.handleSubmit}>
+        <input type="text" id="search" onChange={this.searchUpdate} value={this.state.search}/>
 
-      <input type="submit" value="Search!" />
-    </form>
+        <input type="submit" value="Search!" />
+      </form>
+    )
+
   }
 
 
